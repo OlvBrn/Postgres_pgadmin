@@ -1,0 +1,26 @@
+replicaCount: 1
+
+image:
+  repository: dpage/pgadmin4
+  tag: latest
+  pullPolicy: IfNotPresent
+
+pgadmin:
+  email: admin@example.com
+  password: adminpass
+  nodePort: 30080
+
+postgres:
+  host: my-postgres.postgres.svc.cluster.local
+  port: 5432
+  db: logs_db
+  user: log1
+  password: log1pass
+
+resources:
+  limits:
+    cpu: 250m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi

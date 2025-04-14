@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: postgres-pv
+spec:
+  capacity:
+    storage: 512Mi
+  accessModes:
+  - ReadWriteOnce
+  hostPath:
+    path: /home/oliveira/Mescours/Sprint_8/Airflow/postgre_project/volume_data

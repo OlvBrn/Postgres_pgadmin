@@ -1,0 +1,15 @@
+{
+    "Servers": {
+      "1": {
+        "Name": "my-postgres",
+        "Group": "Servers",
+        "Host": "my-postgres.postgres.svc.cluster.local",
+        "Port": 5432,
+        "MaintenanceDB": "logs_db",
+        "Username": "log1",
+        "SSLMode": "prefer",
+        "PassFile": "/pgpass/pgpass"
+      }
+    }
+  }
+  

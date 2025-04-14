@@ -1,0 +1,19 @@
+image:
+  repository: ubuntu
+  tag: "22.04"
+  pullPolicy: IfNotPresent
+
+resources:
+  limits:
+    cpu: 250m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+volume:
+  enabled: true
+  path: /home/oliveira/Mescours/Sprint_8/Airflow/postgre_project/volume_data
+  mountPath: /workspace
+
+namespace: postgres

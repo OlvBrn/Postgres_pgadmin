@@ -1,0 +1,18 @@
+image:
+  repository: postgres
+  tag: "15"
+  pullPolicy: IfNotPresent
+
+postgres:
+  user: log1
+  password: log1pass
+  db: logs_db
+
+persistence:
+  enabled: true
+  size: 1Gi
+  mountPath: /var/lib/postgresql/data
+
+service:
+  type: ClusterIP
+  port: 5432

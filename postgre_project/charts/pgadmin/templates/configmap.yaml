@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pgadmin-config
+  namespace: postgres
+data:
+  servers.json: |
+{{ .Files.Get "servers.json" | indent 4 }}
+  pgpass: |
+{{ .Files.Get "pgpass" | indent 4 }}
