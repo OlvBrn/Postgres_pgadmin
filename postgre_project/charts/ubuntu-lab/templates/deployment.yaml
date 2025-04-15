@@ -18,11 +18,12 @@ spec:
         - name: ubuntu
           image: "ubuntu:22.04"
           imagePullPolicy: IfNotPresent
-          command: ["/bin/bash", "-c", "--"]
+          command: ["/bin/bash", "-c"]
           args:
             - |
-              apt update && \
-              apt install -y postgresql-client curl wget vim && \
+              apt update && apt install -y postgresql-client && \
+              chmod +x /workspace/scripts/create_user.sh && \
+              /workspace/scripts/create_user.sh && \
               tail -f /dev/null
           resources:
             limits:
@@ -37,4 +38,4 @@ spec:
       volumes:
         - name: volume-data
           hostPath:
-            path: /home/oliveira/Mescours/Sprint_8/Airflow/postgre_project/volume_data
+            path: /home/oliveira/postgres_pgadmin/postgre_project/volume_data
